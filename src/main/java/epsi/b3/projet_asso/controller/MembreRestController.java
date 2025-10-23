@@ -31,7 +31,7 @@ public class MembreRestController {
     //Appeler un membre par son ID
     @GetMapping("/{id}")
     public ResponseEntity <Membre> GetSomeoneById(@PathVariable long id) {
-        Optional <Membre> someone = membreRepository.findById(id);
+        Optional<Membre> someone = membreRepository.findById(id);
         if (someone.isPresent()) {
             return ResponseEntity.ok(someone.get());
         } else {
