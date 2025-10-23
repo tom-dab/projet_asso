@@ -4,7 +4,6 @@ public class Statut {
     private Long id;
     private String type;
 
-    // Getters et setters
     public Long getId() {
         return id;
     }

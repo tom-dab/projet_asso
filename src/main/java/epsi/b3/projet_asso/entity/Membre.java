@@ -1,9 +1,13 @@
 package epsi.b3.projet_asso.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+// import jakarta.persistence.OneToOne;
 
 @Entity
 public class Membre {
@@ -18,6 +22,12 @@ public class Membre {
         this.nom = nom;
         this.prenom = prenom;
     }
+
+    @OneToMany(mappedBy = "membre")
+    private List<Statut> statuts;
+
+    // @OneToOne(mappedBy = "evenement")
+    // private Evenement evenement;
 
     public Long getId() {
         return id;
